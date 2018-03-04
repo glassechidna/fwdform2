@@ -182,10 +182,12 @@ Sometimes we want to do something a bit more advanced than sending a plain-text 
 Instead we may want our form to:
 
  * Send emails containing HTML.
- * Send an automated response to person who submitted the form (i.e. a confirmation email).
+ * Send an automated response to person who submitted the form (i.e. a confirmation email)[*].
  * Generate our emails (in particular our automated response) from a template.
 
 In order to achieve this we can register some additional information with the server to make this possible.
+
+<a name="auto-response-sandbox"></a> \* Sending automated responses will almost certainly require that your Mailgun Domain is out of sandbox mode. Otherwise, Mailgun will return an error (and so will fwdform2) whenever we try send an automated response to someone who isn't an authorized recipient.
 
 ### Registering a form
 
