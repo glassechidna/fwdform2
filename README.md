@@ -8,10 +8,10 @@ Inspired by [fwdform](https://github.com/samdobson/fwdform).
 
 ## Use cases
 
-* You want to forward a simple contact form to your email.
+* You want to forward a simple contact form to an email address.
 * You have a (S3) static site and don't want to run a server.
 * You want to forward arbitrary form fields formatted as human-readable email.
-* You want to use a template to automatically respond to a submitted form.
+* You want to automatically respond (with a template) to users when they submit a form.
 
 ## Prerequisites
 
@@ -19,9 +19,9 @@ Inspired by [fwdform](https://github.com/samdobson/fwdform).
 * A free [Mailgun](https://www.mailgun.com) account.
 * The [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
 
-In order to take advantage of your free Mailgun account, after signing up, please follow the instructions to setup and verify your Mailgun domain name.
+In order to take advantage of your free monthly Mailgun email quota, after signing up, please follow the instructions to setup and verify your Mailgun domain name.
 
-**Note:** Mailgun requires you to provide credit card details to move your domain out of the sandbox (even when utilising the Free plan). However, if you wish, you can leave your domain in the sandbox and manually enter each email recipients as Mailgun [Authorized Recipients](https://app.mailgun.com/app/account/authorized).
+**Note:** Mailgun requires you to select the Concept plan and provide credit card details to move your domain out of the sandbox (even though you still get 10,000 free emails per month). However, for basic usage, you can leave your domain in the sandbox and manually enter each email recipients as Mailgun [Authorized Recipients](https://app.mailgun.com/app/account/authorized).
 
 ## Manually deploy to Heroku
 
@@ -97,7 +97,7 @@ heroku config:unset REGISTRATION_ENABLED REGISTRATION_PASSWORD
 
 Parameters:
 
- * emails
+ * email
 
 Returns:
 
@@ -165,28 +165,28 @@ A message form for you website would look something like:
 ```html
 <form action="<WEB_URL>/user/<public_token>">
     <div>
-    	Name: <input name="name" type="text">
+        Name: <input name="name" type="text">
     </div>
     <div>
-		E-mail: <input name="email" type="text">
-	</div>
-    <div>
-    	Message: <textarea name="message" rows="6" cols="120"></textarea>
+        E-mail: <input name="email" type="text">
     </div>
     <div>
-    	<input type="submit" value="Submit">
+        Message: <textarea name="message" rows="6" cols="120"></textarea>
+    </div>
+    <div>
+        <input type="submit" value="Submit">
     </div>
 </form>
 ```
 
-## Advanced Usage: Registered forms
+## Advanced usage: Registered forms
 
 Sometimes we want to do something a bit more advanced than sending a plain-text message to an email address.
 
 Instead we may want our form to:
 
  * Send emails containing HTML.
- * Send an automated response to person who submitted the form (i.e. a confirmation email)[*].
+ * Send an automated response to the person who submitted the form (i.e. a confirmation email)[*](#auto-response-sandbox).
  * Generate our emails (in particular our automated response) from a template.
 
 In order to achieve this we can register some additional information with the server to make this possible.

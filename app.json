@@ -20,7 +20,7 @@
       "description": "The API key for your Mailgun domain."
     },
     "REGISTRATION_ENABLED": {
-      "description": "Whether user (email recipient) registration is enabled.",
+      "description": "Whether user (email recipient) registration is enabled. (yes/no)",
       "required": false
     },
     "REGISTRATION_PASSWORD": {
@@ -30,6 +30,11 @@
     "DEFAULT_SENDER": {
       "description": "The default sender ('from') email address used when forwarding a message form that does not include an 'email' parameter. If unset, fwdform@<MAILGUN_DOMAIN> will be used instead.",
       "required": false
+    },
+    "REQUESTS_CA_BUNDLE": {
+      "description": "'/etc/ssl/certs/ca-certificates.crt' ensures that the host's SSL certificate authorities are utilised rather than the (potentially dated) CAs packaged with Python",
+      "required": true,
+      "value": "/etc/ssl/certs/ca-certificates.crt"
     }
   },
   "addons": [
