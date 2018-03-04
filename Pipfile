@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+Flask = "~=0.12.2"
+Flask-Cors = "~=3.0.3"
+Flask-SQLAlchemy = "~=2.3.1"
+gunicorn = "~=19.7.1"
+psycopg2 = "~=2.7.3"
+requests = "~=2.2.1"
+SQLAlchemy = "~=1.2.2"
+
+[dev-packages]
+python-dotenv = "~=0.7.1"
+
+[requires]
+python_version = "3.6.4"
