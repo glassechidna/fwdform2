@@ -2,6 +2,8 @@
 
 A simple server for forwarding web forms to email addresses.
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 Inspired by [fwdform](https://github.com/samdobson/fwdform).
 
 ## Use cases
@@ -21,7 +23,9 @@ In order to take advantage of your free Mailgun account, after signing up, pleas
 
 **Note:** Mailgun requires you to provide credit card details to move your domain out of the sandbox (even when utilising the Free plan). However, if you wish, you can leave your domain in the sandbox and manually enter each email recipients as Mailgun [Authorized Recipients](https://app.mailgun.com/app/account/authorized).
 
-## Deploy to Heroku
+## Manually deploy to Heroku
+
+If you don't want to deploy manually, press the "Deploy to Heroku" button at the top of the page.
 
 1. Clone fwdform2:
 

@@ -1,0 +1,40 @@
+{
+  "name": "fwdform2",
+  "description": "A simple server for forwarding web forms to email addresses.",
+  "keywords": [
+    "form",
+    "email",
+    "static",
+    "s3",
+    "heroku"
+  ],
+  "repository": "https://github.com/glassechidna/fwdform2",
+  "scripts": {
+    "postdeploy": "./setup.py"
+  },
+  "env": {
+    "MAILGUN_DOMAIN": {
+      "description": "Your Mailgun registered domain."
+    },
+    "MAILGUN_API_KEY": {
+      "description": "The API key for your Mailgun domain."
+    },
+    "REGISTRATION_ENABLED": {
+      "description": "Whether user (email recipient) registration is enabled.",
+      "required": false
+    },
+    "REGISTRATION_PASSWORD": {
+      "description": "Password that must be provided when registering a new user.",
+      "required": false
+    },
+    "DEFAULT_SENDER": {
+      "description": "The default sender ('from') email address used when forwarding a message form that does not include an 'email' parameter. If unset, fwdform@<MAILGUN_DOMAIN> will be used instead.",
+      "required": false
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:hobby-dev"
+    }
+  ]
+}
