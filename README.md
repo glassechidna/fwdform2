@@ -163,7 +163,7 @@ curl --data "name=Test%20Person&message=Hello" <WEB_URL>/user/<public_token>
 
 ##### Troubleshooting
 
-If this does not work (an error is returned), then it's likely an issue with your Mailgun setup. First, double check your `MAILGUN_DOMAIN` and `MAILGUN_API` are correct.
+If this does not work (an error is returned), then it's likely an issue with your Mailgun setup. First, double check your `MAILGUN_DOMAIN` and `MAILGUN_API_KEY` are correct.
 
 Also, ensure that you've either added your email as an [Authorized Recipient or provided payment information](https://help.mailgun.com/hc/en-us/articles/203068914-What-are-the-differences-between-free-and-paid-accounts) in Mailgun. Regardless, of whether you chose the "Concept" plan or remain on the "Free" (sandboxed) plan, you'll have a quota of emails each month that are 100% free (10,000/month at the time of writing).
 
