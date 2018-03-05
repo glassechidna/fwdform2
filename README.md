@@ -149,8 +149,11 @@ Parameters:
  * message
  * _name_
  * _email_
+ * _redirect_
 
 `message` is required, all other parameters are optional.
+
+`redirect` can be specified as a URL. Instead of returning a `200 Success` status code, a `302 Redirect` to `redirect` will be issued.
 
 #### Testing from command line
 
@@ -239,7 +242,7 @@ Returns:
 curl --data "token=<private_token>&subject=Just%20saying%20hi&body=Hello%20%25name%25" <WEB_URL>/user/<public_token>/form
 ```
 
-**Note:** We've URL encoded our spaces and percentage signs as `%20` an `%25` respectively. Web browsers will do this for you automatically, doing this manually is only necessary from command line.
+**Note:** We've URL encoded our spaces and percentage signs as `%20` and `%25` respectively. Web browsers will do this for you automatically, doing this manually is typically only necessary from command line.
 
 ### Delete a form
 
@@ -264,9 +267,12 @@ curl -X DELETE --data "token=<private_token>" <WEB_URL>/form/<form_token>
 Parameters:
 
 * _email_
+* _redirect_
 * _Any custom parameters you want to use in your templates._
 
 There are no required parameters. However, if you want to send an automated response, an `email` must be provided. 
+
+`redirect` can be specified as a URL. Instead of returning a `200 Success` status code, a `302 Redirect` to `redirect` will be issued.
 
 #### Testing from command line
 
