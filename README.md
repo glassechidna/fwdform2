@@ -177,6 +177,7 @@ A message form for you website would look something like:
         Message: <textarea name="message" rows="6" cols="120"></textarea>
     </div>
     <div>
+        <input name="redirect" type="hidden" value="https://<YOUR_WEBSITE>/<YOUR_POST_SUBMISSION_PAGE>">
         <input type="submit" value="Submit">
     </div>
 </form>
@@ -218,7 +219,7 @@ Parameters:
 
 `token`, `subject` and `body` are required, all other parameters are optional.
 
-**Note:** To send an automated response, at a minimum a `response_body` must be provided. You cannot provided `response_html_body` on its lonesome, a plain-text body must always be provided.
+**Note:** To send an automated response, at a minimum a `response_body` must be provided. You cannot provide `response_html_body` on its lonesome, a plain-text body must always be provided.
 
 `subject`, `body`, `html_body`, `response_subject`, `response_body` and `response_html_body` can all be provided as a template, where occurrences of `%parameter%` will be replaced by a parameter in the submitted form.
 
