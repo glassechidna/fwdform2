@@ -181,9 +181,10 @@ def forward_message(public_token):
     subject = request.form.get('name') or request.form.get('email') or 'Anonymous'
     send_mail(
         to_address=user.email,
-        from_address=request.form.get('email') or default_sender,
+        from_address=default_sender,
         subject=f"Message from {subject}",
         body=request.form['message'],
+        reply_to_address=request.form.get('email'),
     )
 
     if 'redirect' in request.form:
@@ -256,9 +257,10 @@ def forward_form(form_token):
 
     send_mail(
         to_address=user.email,
-        from_address=submitter_email or default_sender,
+        from_address=default_sender,
         subject=substitute_params(form.subject, request.form),
-        body=substitute_params(form.body, request.form)
+        body=substitute_params(form.body, request.form),
+        reply_to_address=submitter_email,
     )
 
     if submitter_email and form.response_body:
