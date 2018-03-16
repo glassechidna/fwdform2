@@ -11,7 +11,7 @@ Inspired by [fwdform](https://github.com/samdobson/fwdform).
 * You want to forward a simple contact form to an email address.
 * You have a (S3) static site and don't want to run a server.
 * You want to forward arbitrary form fields formatted as human-readable email.
-* You want to automatically respond (with a template) to users when they submit a form.
+* You want to send an automated response email (using a template) when users submit a form.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ Inspired by [fwdform](https://github.com/samdobson/fwdform).
 
 In order to take advantage of your free monthly Mailgun email quota, after signing up, please follow the instructions to setup and verify your Mailgun domain name.
 
-**Note:** Mailgun requires you to select the Concept plan and provide credit card details to move your domain out of the sandbox (even though you still get 10,000 free emails per month). However, for basic usage, you can leave your domain in the sandbox and manually enter each email recipients as Mailgun [Authorized Recipients](https://app.mailgun.com/app/account/authorized).
+**Note:** Mailgun requires you to select the Concept plan and provide credit card details to move your domain out of the sandbox (even though you still get 10,000 free emails per month). However, for basic usage, you can leave your domain in the sandbox and manually enter each email recipient as Mailgun [Authorized Recipients](https://app.mailgun.com/app/account/authorized).
 
 ## Manually deploy to Heroku
 
@@ -89,7 +89,7 @@ Although it's password protected, it is suggested that you disable the registrat
 heroku config:unset REGISTRATION_ENABLED REGISTRATION_PASSWORD
 ```
 
-**Note:** Don't forget to either move your Mailgun domain out of the sandbox mode, or alternatively add each user as an [Authorized Recipient](https://app.mailgun.com/app/account/authorized).
+**Note:** Don't forget to either move your Mailgun domain out of sandbox mode, or alternatively add each user as an [Authorized Recipient](https://app.mailgun.com/app/account/authorized).
 
 ### Register a user
 
