@@ -16,4 +16,4 @@ SQLAlchemy = "~=1.2.2"
 python-dotenv = "~=0.7.1"
 
 [requires]
-python_version = "3.6.4"
+python_version = "3.6.13"
